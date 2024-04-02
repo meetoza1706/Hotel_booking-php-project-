@@ -12,14 +12,43 @@
 .logo-img{
     height: 70px;
     
-    border: 2px red dashed;
-
-    margin: 20p;
-    
+    position: absolute;
+    left: 50px;
+    top: 12px;
 }
+
 .home{
     text-decoration: none;
-    color:white;
+    color:white;    
 
-    border: 2px red dashed;
+    position: fixed;
+    top: 38px;
+    left: 1025px;
+
+    font-size: larger;
+
+}
+
+.contact_us{
+    text-decoration: none;
+    color: white;    
+
+    position: fixed;
+    top: 38px;
+    left: 1180px;
+
+    font-size: larger;
+
+}
+
+.about_us{
+    text-decoration: none;
+    color: white;    
+
+    position: fixed;
+    top: 38px;
+    left: 1360px;
+
+    font-size: larger;
+
 }
