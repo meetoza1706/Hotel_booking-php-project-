@@ -1,10 +1,9 @@
 .navbar{
     border: 2px rgba(12, 170, 220,0.3) solid;
-    height: 80px;
-    background-color: #1481BA;
-
+    height: 90px;
+    background-color: #333333;
     margin: 40px;
-    margin-top: 0px;
+    margin-top: -10px;
     margin-left: 0px;
     margin-right: 0px;
 }
