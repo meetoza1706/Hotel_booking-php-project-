@@ -1,6 +1,6 @@
 .navbar{
     border: 2px rgba(12, 170, 220,0.3) solid;
-    height: 44px;
+    height: 80px;
     background-color: #1481BA;
 
     margin: 40px;
@@ -9,6 +9,17 @@
     margin-right: 0px;
 }
 
-.home{
+.logo-img{
+    height: 70px;
     
+    border: 2px red dashed;
+
+    margin: 20p;
+    
+}
+.home{
+    text-decoration: none;
+    color:white;
+
+    border: 2px red dashed;
 }
