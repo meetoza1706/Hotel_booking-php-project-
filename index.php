@@ -1,14 +1,16 @@
-<?php
-echo "hello world!";
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Hotel Booking system</title>
+        <link rel="stylesheet" href="main.css"> 
     </head>
     <body>
-        <h2>Hotel Booking System</h2>
-        <nav>
-            
-        </nav>
+        <!-- navbar -->
+        <?php
+        include 'navbar.php';
+        ?>
+
+    <div class="heading"><h1 class="heading_text">Hotel Booking System</h1></div>
+        
     </body>
 </html>

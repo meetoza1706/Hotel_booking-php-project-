@@ -2,14 +2,14 @@
 <html>
     <head>
         <title>WiseStay</title>
-        <link rel="stylesheet" href="navbar.css">
+        <link rel="stylesheet" href="main.css">
     </head>
-    <body>
-        <nav class="navbar">
+    <body style=" background-color: silver">
+        <div class="navbar">
         <img class="logo-img" src="logo.png">
-        <a class="home" href="#">Home</a>
-        <a class="contact_us" href="#">contact us</a>
-        <a class="about_us" href="#">about us</a>
-        </nav>
+        <div class="home_div"><a class="home" href="#">Home</a></div>
+        <div class="contact_us_div"><a class="contact_us" href="#">Contact Us</a></div>
+        <div class="about_us_div"><a class="about_us" href="#">About Us</a></div>
+        </div>
     </body>
 </html>
