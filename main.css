@@ -87,3 +87,40 @@
     color: grey;
     font-size: 300%;
 }
+
+.search_container{
+    border: 2px red dashed;
+    
+    width: 80%;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 4px;
+
+    display: inline-block;
+}
+
+
+.city,
+.inn_date,
+.out_date,
+.person{
+    border: 2px red dashed;
+
+    width: 271px;
+    height: 25px;
+
+    text-align: center;
+
+    display: inline-block;
+
+    margin: -2px;
+}
+
+.search-btn{
+    width: 118px;
+    height: 30px;
+    display: inline-block;
+}

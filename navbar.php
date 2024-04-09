@@ -4,7 +4,7 @@
         <title>WiseStay</title>
         <link rel="stylesheet" href="main.css">
     </head>
-    <body style=" background-color: silver">
+    <body style="background-color: silver">
         <div class="navbar">
         <img class="logo-img" src="logo.png">
         <div class="home_div"><a class="home" href="#">Home</a></div>
