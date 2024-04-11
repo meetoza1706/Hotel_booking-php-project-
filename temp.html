@@ -21,9 +21,12 @@
             <option value="City">City</option>
             <option value="Ahmedabad">Ahmedabad</option>
         </select></div>
-        <div class="inn_date">check-inn</div> <!--check_inn date-->
-        <div class="out_date">check-out</div><!--check_out Date-->
-        <div class="person">person</div> <!--adults and kids-->
+        <div class="inn_date"><label for="check-in" class="check-in-label">Check-in: </label>
+          <input type="date" id="check-in" name="check-in" class="check-in">
+          </div> <!--check_inn date-->
+        <div class="out_date"><label for="check-in" class="check-in-label">Check-out: </label>
+          <input type="date" id="check-in" name="check-in" class="check-in"></div><!--check_out Date-->
+        <div class="person"><label for="person" class="person_label">persons:</label><input type="number" name="person" placeholder="persons" class="person_number" min="0" max="30" ></div> <!--adults and kids-->
         <button class="search-btn">Search</button>
     </div>
     

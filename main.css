@@ -157,3 +157,36 @@
     border: 1px black solid;
     border-radius: 0px 25px 25px 0px;
 }
+
+.check_inn{
+    text-align: center;
+
+    position: relative;
+    top: 65%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+
+    width: 200px;
+}
+
+.check-in{
+  /* text-align: center; */
+  position: relative;
+  top: 13px;
+
+}
+
+.check-in-label{
+  position: relative;
+  top: 13px;
+}
+
+.person_number,
+.person_label{
+    position: relative;
+    top: 12px;
+}
+
+.person_number{
+    width: 85px;
+}
