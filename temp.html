@@ -9,26 +9,20 @@
             <img class="logo-img" src="logo.png">
             <div class="home_div"><a class="home" href="#">Home</a></div>
             <div class="contact_us_div"><a class="contact_us" href="#">Contact Us</a></div>
-            <div class="about_us_div"><a class="about_us" href="#">About Us</a></div>
+            <div class="about_us_div"><a class="about_us" href="#">Your Bookings</a></div>
             </div>
-        
+            
+            <div class="heading_login"><h1 class="heading_text">Login</h1></div>
 
-    <div class="heading"><h1 class="heading_text">Hotel Booking System</h1></div>
+            <div class="login-container">
 
+                <input type="text" id="username" name="username" placeholder="username" class="username" required>
+                <input type="text" id="password" name="password" placeholder="password" class="password" required>            
+                <button type="submit" class="login-btn">Login</button>
+                <p class="text">Don't have a account?</p><a class="sign-up-text" href="sign-up.php">sign-up here!</a>
 
-    <div class="search_container">
-        <div class="city"><select id="city" class="city_content" name="city" placeholder="City">
-            <option value="City">City</option>
-            <option value="Ahmedabad">Ahmedabad</option>
-        </select></div>
-        <div class="inn_date"><label for="check-in" class="check-in-label">Check-in: </label>
-          <input type="date" id="check-in" name="check-in" class="check-in">
-          </div> <!--check_inn date-->
-        <div class="out_date"><label for="check-in" class="check-in-label">Check-out: </label>
-          <input type="date" id="check-in" name="check-in" class="check-in"></div><!--check_out Date-->
-        <div class="person"><label for="person" class="person_label">persons:</label><input type="number" name="person" placeholder="persons" class="person_number" min="0" max="30" ></div> <!--adults and kids-->
-        <button class="search-btn">Search</button>
-    </div>
+            </div>
+
     
     </body>
 </html>
