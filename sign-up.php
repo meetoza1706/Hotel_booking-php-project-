@@ -18,8 +18,8 @@
 
     <input type="text" id="username" name="username" placeholder="username" class="username" required>
     <input type="email" id="email" name="email" placeholder="email" class="email" required>
-    <input type="text" id="password" name="password" placeholder="password" class="password" required>            
-    <input type="text" id="c-password" name="c-password" placeholder="c-password" class="c-password" required>            
+    <input type="password" id="password" name="password" placeholder="password" class="password" required>            
+    <input type="password" id="c-password" name="c-password" placeholder="c-password" class="c-password" required>            
     <button type="submit" class="login-btn">Sign-Up</button>
 
 </div>
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost"; 
     $username = "root"; 
     $password = ""; 
-    $dbname = "wisestay_db";
+    $dbname = "wisestay_db1";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -54,14 +54,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cpassword = $_POST['c-password'];
 
     // You may want to perform additional validation here
+    if($password == $cpassword){
+    // Get current timestamp
+    $timestamp = date('Y-m-d H:i:s');
 
-    // Insert user into database
-    $sql = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
+    // Insert user into database with timestamp
+    $sql = "INSERT INTO user (username, email, password, created_at) VALUES ('$username', '$email', '$password', '$timestamp')";
 
     if ($conn->query($sql) === TRUE) {
         echo "User registered successfully";
+        header ("location: http://localhost/hotel_booking_web/login.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    }
+    else{
+        echo "passwords do not match!";
     }
 
     // Close connection

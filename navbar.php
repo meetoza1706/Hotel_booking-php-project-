@@ -8,7 +8,7 @@
     <body style="background-color: silver">
     <div class="navbar">
             <img class="logo-img" src="logo.png">
-            <div class="home_div"><a class="home" href="#">Home</a></div>
+            <div class="home_div"><a class="home" href="http://localhost/hotel_booking_web/index.php">Home</a></div>
             <div class="contact_us_div"><a class="contact_us" href="#">Contact Us</a></div>
             <div class="about_us_div"><a class="about_us" href="view_bookings.php">Your Bookings</a></div>
             </div>

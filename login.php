@@ -16,7 +16,7 @@
 
 <form action="login.php" method="post">
     <input type="text" id="username" name="username" placeholder="username" class="username" required>
-    <input type="text" id="password" name="password" placeholder="password" class="password" required>            
+    <input type="password" id="password" name="password" placeholder="password" class="password" required>            
     <button type="submit" class="login-btn">Login</button>
     <p class="text">Don't have a account?</p><a class="sign-up-text" href="sign-up.php">sign-up here!</a>
 
@@ -27,50 +27,64 @@
 </html>
 
 <?php
-// Check if the form is submitted
+
+session_start();
+
+// Database credentials
+$hostname = 'localhost';
+$dbname = 'wisestay_db1';
+$dbuser = 'root';
+$dbpass = '';
+
+// Connection string
+$dsn = "mysql:host=$hostname;dbname=$dbname;charset=utf8";
+
+// Initialize authentication variables
+$authUsername = '';
+$authPassword = '';
+$authenticated = false;
+
+// Check if form data is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $servername = "localhost";
-    $username = "root"; 
-    $password = "";
-    $dbname = "wisestay_db"; 
+    // Retrieve entered username and password from the form
+    $authUsername = $_POST["username"];
+    $authPassword = $_POST["password"];
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    try {
+        // Create a new PDO instance
+        $pdo = new PDO($dsn, $dbuser, $dbpass);
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        // Prepare and execute SELECT query to find user with provided credentials
+        $stmt = $pdo->prepare("SELECT COUNT(*) AS count FROM user WHERE username = ? AND password = ?");
+        $stmt->execute([$authUsername, $authPassword]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Check if user exists with provided credentials
+        if ($result['count'] > 0) {
+            $authenticated = true;
+        }
+    } catch (PDOException $e) {
+        // Handle connection errors
+        echo "Connection failed: " . $e->getMessage();
+        exit();
     }
+}
 
-    // Retrieve form data (using mysqli_real_escape_string for basic protection)
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+// Display authentication result message
+if ($authenticated) {
+    $_SESSION['username'] = $authUsername; // Store entered username in session
+    $_SESSION['authenticated'] = true; // Set authenticated flag in session
+    echo "Login Successful <br>";
+} else {
+    echo "Login Failed <br>";
+}
 
-    // Query to check if user exists and password matches
-    $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
+if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
+    echo "You are logged in as " . $_SESSION['username'];
+    header ("location: http://localhost/hotel_booking_web/view_bookings.php");
+} 
 
-    // Execute the query
-    $result = $conn->query($sql);
-
-    // Check for errors
-    if (!$result) {
-        die("Error executing the query: " . $conn->error);
-    }
-
-    // Check if exactly one row is returned
-    if ($result->num_rows == 1) {
-        // User exists and password matches
-        echo "Login successful";
-        // You can redirect the user to another page after successful login if needed
-        header("Location: index.php");
-    } else {
-        // User does not exist or password is incorrect
-        echo "Invalid username or password";
-    }
-
-    // Close connection
-    $conn->close();
+else {
+    echo "You are not logged in";
 }
 ?>
-
-

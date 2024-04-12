@@ -67,6 +67,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Check-in Day: " . $check_in_day . "<br>";
     echo "Check-in Month: " . $check_in_month . "<br>";
     echo "Check-in Year: " . $check_in_year . "<br>";
+
+    $check_out_day = date('d', strtotime($check_out));
+    $check_out_month = date('m', strtotime($check_out));
+    $check_out_year = date('Y', strtotime($check_out));
+
+    echo "Check-out Day: " . $check_out_day . "<br>";
+    echo "Check-out Month: " . $check_out_month . "<br>";
+    echo "Check-out Year: " . $check_out_year . "<br>";    
+
 }
 
 // Clear the variables after refreshing to avoid overwriting.
