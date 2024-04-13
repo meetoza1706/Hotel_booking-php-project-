@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     }
     else{
-        echo "passwords do not match!";
+        echo "passwords do not match!"; 
     }
 
     // Close connection
